@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диана Зайцева - Резюме</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Диана Зайцева</h1>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:diana.zaytseva.28.04.2005@mail.ru">diana.zaytseva.28.04.2005@mail.ru</a></p>
+            <p>GitHub: <a href="https://github.com/Dianka2804" target="_blank">github.com/Dianka2804</a></p>
+        </div>
+    </header>
+
+    <div class="menu">
+        <a href="#" data-content="summary">О себе</a>
+        <a href="#" data-content="work-experience">Опыт работы</a>
+        <a href="#" data-content="education">Образование</a>
+        <a href="#" data-content="interests">Интересы</a>
+    </div>
+
+    <div class="content active" id="summary">
+        <h2>О себе (Summary)</h2>
+        <p>Самостоятельный и надежный профессионал с большим опытом в программной инженерии. Успешно руководила проектными командами для создания продуктивных и технологических продуктов.</p>
+    </div>
+
+    <div class="content" id="work-experience">
+        <h2>Опыт работы (Work Experience)</h2>
+        <ul>
+            <li><strong>Staff Software Engineer, OneConnect Financial Technology</strong> (Ноябрь 2021 - настоящее время)</li>
+            <li><strong>R&D Technical Lead, Jimcon Engineering</strong> (Октябрь 2019 - Октябрь 2021)</li>
+            <li><strong>Sr. Engineer, IT Manager, GeoApplication Engineers</strong> (Июнь 2016 - Сентябрь 2019)</li>
+            <li><strong>Sr. Software Engineer, Shenzhen Gongzuokuai Technology</strong> (Июль 2015 - Июнь 2016)</li>
+            <li><strong>Sr. Software Engineer, Digimaple Enterprise Data Solutions</strong> (Июнь 2014 - Июнь 2015)</li>
+        </ul>
+    </div>
+
+    <div class="content" id="education">
+        <h2>Образование (Education)</h2>
+        <ul>
+            <li>Бакалавр в области программной инженерии, Guangxi University for Nationalities (2011-2015)</li>
+            <li>Сертификат Huawei HCIA-Cloud Service</li>
+            <li>Сертификат IBM Senior Software Engineer Course</li>
+        </ul>
+    </div>
+
+    <div class="content" id="interests">
+        <h2>Интересы (Interests)</h2>
+        <p>Увлечена техникой с открытым исходным кодом, занимаюсь медитацией, рисую, а также увлекаюсь фотографией.</p>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Распечатать резюме</button>
+
+    <footer>
+        <p>&copy; 2024 Диана Зайцева. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const menuLinks = document.querySelectorAll('.menu a');
+        const contents = document.querySelectorAll('.content');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const contentId = event.target.getAttribute('data-content');
+                contents.forEach(content => {
+                    if (content.id === contentId) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
